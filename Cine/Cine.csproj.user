@@ -10,5 +10,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_DbContextTypeFullName>Cine.Data.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
+    <ShowAllFiles>true</ShowAllFiles>
+    <NameOfLastUsedPublishProfile>Cine20190517022049 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
