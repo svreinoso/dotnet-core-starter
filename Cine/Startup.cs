@@ -19,6 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Cine.Services;
 using Citme.Data;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Cine
 {
@@ -75,8 +76,15 @@ namespace Cine
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Cine API", Version = "v1" });
+            });
+
             services.AddSingleton(Configuration);
             services.AddTransient<IEmailServices, EmailServices>();
+            services.AddTransient<IUserServices, UserServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -101,6 +109,17 @@ namespace Cine
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseMvc(routes =>
             {

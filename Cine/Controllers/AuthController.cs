@@ -1,6 +1,8 @@
 ﻿using Cine.Data;
 using Cine.Dto;
 using Cine.Models;
+using Cine.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +24,14 @@ namespace Cine.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly IUserServices _userServices;
 
-        public AuthController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IConfiguration configuration)
+        public AuthController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IConfiguration configuration, IUserServices userServices)
         {
             _context = context;
             _userManager = userManager;
             _configuration = configuration;
+            _userServices = userServices;
         }
 
         [HttpPost("login")]
@@ -71,6 +76,23 @@ namespace Cine.Controllers
             return Ok(response);
 
         }
-        
+
+        [HttpPost("Register")]
+        public async Task<IActionResult> Register(UserDto userDto)
+        {
+            var response = await _userServices.AddUserAsync(userDto, AppRoles.User);
+            if (response.Success) return new OkObjectResult(response);
+            return new BadRequestObjectResult(response);
+        }
+
+        [Authorize(Roles = AppRoles.Admin)]
+        [HttpPost("AddAdmin")]
+        public async Task<IActionResult> AddAdmin(UserDto userDto)
+        {
+            var response = await _userServices.AddUserAsync(userDto, AppRoles.Admin);
+            if (response.Success) return new OkObjectResult(response);
+            return new BadRequestObjectResult(response);
+        }
+
     }
 }

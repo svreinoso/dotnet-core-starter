@@ -15,5 +15,6 @@ namespace Cine.Data
         }
 
         public DbSet<Item> Items { get; set; }
+        public DbSet<Movie> Movies { get; set; }
     }
 }

@@ -1,0 +1,14 @@
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Cine.Test.deps.json
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Cine.Test.runtimeconfig.json
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Cine.Test.runtimeconfig.dev.json
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Cine.Test.dll
+C:\Users\Samuel\source\repos\Cine\Cine.Test\bin\Debug\netcoreapp2.2\Cine.Test.pdb
+C:\Users\Samuel\source\repos\Cine\Cine.Test\obj\Debug\netcoreapp2.2\Cine.Test.csprojAssemblyReference.cache
+C:\Users\Samuel\source\repos\Cine\Cine.Test\obj\Debug\netcoreapp2.2\Cine.Test.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\source\repos\Cine\Cine.Test\obj\Debug\netcoreapp2.2\Cine.Test.AssemblyInfoInputs.cache
+C:\Users\Samuel\source\repos\Cine\Cine.Test\obj\Debug\netcoreapp2.2\Cine.Test.AssemblyInfo.cs
+C:\Users\Samuel\source\repos\Cine\Cine.Test\obj\Debug\netcoreapp2.2\Cine.Test.dll
+C:\Users\Samuel\source\repos\Cine\Cine.Test\obj\Debug\netcoreapp2.2\Cine.Test.pdb

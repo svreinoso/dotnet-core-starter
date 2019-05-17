@@ -1,0 +1,1 @@
+dotnet Cine.Test.dll %*
